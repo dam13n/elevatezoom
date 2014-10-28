@@ -29,6 +29,8 @@ if ( typeof Object.create !== 'function' ) {
 				self.$elem = $( elem );
 
 				self.imageSrc = self.$elem.data("zoom-image") ? self.$elem.data("zoom-image") : self.$elem.attr("src");
+				// self.slideIndex = self.$elem.data("slide-number");
+
 
 				self.options = $.extend( {}, $.fn.elevateZoom.options, options );
 
@@ -209,7 +211,7 @@ if ( typeof Object.create !== 'function' ) {
 				//create the div's                                                + ""
 				//self.zoomContainer = $('<div/>').addClass('zoomContainer').css({"position":"relative", "height":self.nzHeight, "width":self.nzWidth});
 
-				self.zoomContainer = $('<div class="zoomContainer" ng-show="activeSlide()" style="-webkit-transform: translateZ(0);z-index: 1000;position:absolute;left:'+self.nzOffset.left+'px;top:'+self.nzOffset.top+'px;height:'+self.nzHeight+'px;width:'+self.nzWidth+'px;"></div>');
+				self.zoomContainer = $('<div class="zoomContainer" slide="' + String(self.options.indexSlide) + '" ng-show="activeSlide()" style="-webkit-transform: translateZ(0);z-index: 1000;position:absolute;left:'+self.nzOffset.left+'px;top:'+self.nzOffset.top+'px;height:'+self.nzHeight+'px;width:'+self.nzWidth+'px;"></div>');
 				$('body').append(self.zoomContainer);
 
 
@@ -1126,6 +1128,7 @@ if ( typeof Object.create !== 'function' ) {
 			cursor:"default", // user should set to what they want the cursor as, if they have set a click function
 			responsive:false,
 			onComplete: $.noop,
+			indexSlide: 0, //custom hack to make it work w/ flex slider
 			onZoomedImageLoaded: function() {}
 	};
 
