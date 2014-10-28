@@ -1,5 +1,5 @@
 /*
- *	jQuery elevateZoom 2.2.3
+ *	jQuery elevateZoom 2.3.5
  *	Demo's and documentation:
  *	www.elevateweb.co.uk/image-zoom
  *
