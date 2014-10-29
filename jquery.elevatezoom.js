@@ -1131,8 +1131,8 @@ if ( typeof Object.create !== 'function' ) {
 			indexSlide: 0, //custom hack to make it work w/ flex slider
 			onZoomedImageLoaded: function() {
 				$('div.zoomContainer').hide();
-	      slideIndex = $('.flex-active-slide img').attr('data-slide-index');
-	      $("div.zoomContainer[slide='" + String(slideIndex) + "']").show();
+	      indexSlide = $('.flex-active-slide img').attr('data-slide-index');
+	      $("div.zoomContainer[slide='" + String(indexSlide) + "']").show();
 			}
 	};
 
